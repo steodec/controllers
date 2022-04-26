@@ -12,7 +12,21 @@
 
 namespace Steodec\Controllers;
 
-abstract class AbstractControllers
-{
+use Steodec\ORM\AbstractEntity;
+
+abstract class AbstractControllers {
     use views;
+
+    /**
+     * @param AbstractEntity $entity
+     * @param array $form
+     * @return AbstractEntity
+     */
+    public function ArrayToEntity(AbstractEntity $entity, array $form): AbstractEntity {
+        foreach ($form as $key => $value):
+            $entity->{$key} = $value;
+        endforeach;
+
+        return $entity;
+    }
 }
