@@ -17,6 +17,7 @@
   "require": {
     "steodec/router": "2.0",
     "salernolabs/php-to-xml": "^1.0",
-    "twig/twig": "^3.3"
+    "twig/twig": "^3.3",
+    "twig/string-extra": "^3.4"
   }
 }

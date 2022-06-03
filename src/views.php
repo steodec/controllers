@@ -13,6 +13,7 @@
 namespace Steodec\Controllers;
 
 
+use Bluetel\Twig\TruncateExtension;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
 use ReflectionException;
@@ -24,6 +25,7 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Twig\Extension\DebugExtension;
+use Twig\Extra\String\StringExtension;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -73,6 +75,7 @@ trait views {
         $loader            = new FilesystemLoader(Constants::TEMPLATE_PATH);
         $twig              = new Environment($loader, ['debug' => TRUE]);
         $twig->addExtension(new DebugExtension());
+        $twig->addExtension(new StringExtension());
         $twig->addFunction(new TwigFunction('getRoute', fn (?string $path = NULL, ?array $params = NULL) => $this->returnRoute($path, $params)));
         $twig->addGlobal('_host', $_SERVER['SERVER_NAME']);
         $twig->addGlobal('env', $_ENV);
