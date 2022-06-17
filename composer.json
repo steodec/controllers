@@ -2,7 +2,7 @@
   "name": "steodec/controllers",
   "type": "library",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "autoload": {
     "psr-4": {
       "Steodec\\Controllers\\": "src/"
@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "steodec/router": "2.0",
+    "steodec/router": "2.2",
     "salernolabs/php-to-xml": "^1.0",
     "twig/twig": "^3.3",
     "twig/string-extra": "^3.4"
